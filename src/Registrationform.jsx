@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import  {useState} from "react";
 
 const Registrationform = () => {
   const [formData, setFormData] = useState({
@@ -68,107 +68,51 @@ const Registrationform = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white shadow-md rounded-2xl p-6 w-96"
-      >
-        <h2 className="text-2xl font-bold mb-4 text-center">
-          Registration Form
-        </h2>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <h2> Registration Form </h2>
 
         {/* Username */}
-        <div className="mb-3">
-          <label className="block font-medium">Username</label>
-          <input
-            type="text"
-            name="username"
-            className="border p-2 w-full rounded"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
-          {errors.username && (
-            <p className="text-red-500 text-sm">{errors.username}</p>
-          )}
+        <div>
+          <label>Username</label>
+          <input type="text" name="username" value={formData.username} onChange={handleChange}/>
+          {errors.username && (<p>{errors.username}</p>)}
         </div>
 
         {/* Password */}
-        <div className="mb-3">
-          <label className="block font-medium">Password</label>
-          <input
-            type="password"
-            name="password"
-            className="border p-2 w-full rounded"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-          {errors.password && (
-            <p className="text-red-500 text-sm">{errors.password}</p>
-          )}
+        <div>
+          <label>Password</label>
+          <input type="password" name="password" value={formData.password} onChange={handleChange}/>
+          {errors.password && (<p>{errors.password}</p>)}
         </div>
 
         {/* Location Dropdown */}
-        <div className="mb-3">
-          <label className="block font-medium">Location</label>
-          <select
-            name="location"
-            className="border p-2 w-full rounded"
-            value={formData.location}
-            onChange={handleChange}
-            required
-          >
+        <div>
+          <label>Location</label>
+          <select name="location" value={formData.location} onChange={handleChange}>
             <option value="">-- Select Location --</option>
             <option value="Mumbai">Mumbai</option>
             <option value="Kolkata">Kolkata</option>
             <option value="Bangalore">Bangalore</option>
             <option value="Chennai">Chennai</option>
           </select>
-          {errors.location && (
-            <p className="text-red-500 text-sm">{errors.location}</p>
-          )}
+          {errors.location && (<p>{errors.location}</p>)}
         </div>
 
         {/* Contact No */}
-        <div className="mb-3">
-          <label className="block font-medium">Contact No</label>
-          <input
-            type="text"
-            name="contactNo"
-            className="border p-2 w-full rounded"
-            value={formData.contactNo}
-            onChange={handleChange}
-            required
-          />
-          {errors.contactNo && (
-            <p className="text-red-500 text-sm">{errors.contactNo}</p>
-          )}
+        <div>
+          <label>Contact No</label>
+          <input type="text" name="contactNo" value={formData.contactNo} onChange={handleChange}/>
+          {errors.contactNo && (<p>{errors.contactNo}</p>)}
         </div>
 
         {/* Email ID */}
-        <div className="mb-3">
-          <label className="block font-medium">Email ID</label>
-          <input
-            type="email"
-            name="emailId"
-            className="border p-2 w-full rounded"
-            value={formData.emailId}
-            onChange={handleChange}
-            required
-          />
-          {errors.emailId && (
-            <p className="text-red-500 text-sm">{errors.emailId}</p>
-          )}
+        <div>
+          <label >Email ID</label>
+          <input type="email" name="emailId" value={formData.emailId} onChange={handleChange}/>
+          {errors.emailId && (<p>{errors.emailId}</p>)}
         </div>
-
-        {/* Submit Button */}
-        <button
-          type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded-2xl w-full hover:bg-blue-700"
-        >
-          Submit
-        </button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );

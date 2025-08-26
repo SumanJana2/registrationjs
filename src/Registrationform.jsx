@@ -17,18 +17,12 @@ const Registrationform = () => {
 
     // Username: only letters and digits, first character must be a letter
     if (!/^[A-Za-z][A-Za-z0-9]*$/.test(formData.username)) {
-      newErrors.username =
-        "Username must start with a letter and contain only letters and digits.";
+      newErrors.username = "Username must start with a letter and contain only letters and digits.";
     }
 
     // Password: minimum 5 chars, at least 1 letter, 1 digit, 1 special char
-    if (
-      !/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@#$!%*?&])[A-Za-z\d@#$!%*?&]{5,}$/.test(
-        formData.password
-      )
-    ) {
-      newErrors.password =
-        "Password must be at least 5 characters with 1 letter, 1 digit, and 1 special character.";
+    if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@#$!%*?&])[A-Za-z\d@#$!%*?&]{5,}$/.test(formData.password)) {
+      newErrors.password = "Password must be at least 5 characters with 1 letter, 1 digit, and 1 special character.";
     }
 
     // Contact No: exactly 10 digits
@@ -37,9 +31,7 @@ const Registrationform = () => {
     }
 
     // Email: must be valid format
-    if (
-      !/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(formData.emailId)
-    ) {
+    if (!/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(formData.emailId)) {
       newErrors.emailId = "Invalid email format.";
     }
 
